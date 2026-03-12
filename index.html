@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name — Academic Page</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%237a3b1e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='24' font-weight='400' fill='%23f9f7f4' letter-spacing='1'%3ELP%3C/text%3E%3C/svg%3E"/>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink:      #1a1a1a;
+      --muted:    #5a5a5a;
+      --rule:     #d0cdc8;
+      --bg:       #f9f7f4;
+      --accent:   #7a3b1e;
+      --max-w:    680px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ───────────────────────────────────── */
+    .page {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    /* ── Header ───────────────────────────────────── */
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    .photo {
+      width: 130px;
+      height: 160px;
+      object-fit: cover;
+      object-position: top;
+      flex-shrink: 0;
+      filter: grayscale(15%);
+    }
+
+    /* placeholder shown when no photo is set */
+    .photo-placeholder {
+      width: 130px;
+      height: 160px;
+      flex-shrink: 0;
+      background: #e4e1db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      padding: 12px;
+    }
+
+    .header-text h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 2.4rem;
+      letter-spacing: 0.01em;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .header-text .role {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .header-text .institution {
+      font-size: 16px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── Navigation ───────────────────────────────── */
+    nav {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 10px 0;
+    }
+
+    nav a {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      margin-right: 28px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── Section divider ──────────────────────────── */
+    hr.rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 36px 0;
+    }
+
+    /* ── Bio ──────────────────────────────────────── */
+    .bio p {
+      margin-bottom: 18px;
+    }
+
+    .bio a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #c8a088;
+    }
+
+    .bio a:hover {
+      color: #5c2a12;
+    }
+
+    /* ── Contact ──────────────────────────────────── */
+    .contact {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .contact strong {
+      font-weight: 500;
+      color: var(--ink);
+      font-style: normal;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Research page ────────────────────────────── */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.8rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+      color: var(--ink);
+    }
+
+    .paper {
+      margin-bottom: 28px;
+      padding-left: 16px;
+      border-left: 2px solid var(--rule);
+    }
+
+    .paper .title {
+      font-style: italic;
+      font-size: 18px;
+    }
+
+    .paper .title a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .paper .title a:hover { text-decoration: underline; }
+
+    .paper .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .paper .abstract {
+      font-size: 16px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.65;
+    }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      margin-top: 64px;
+      border-top: 1px solid var(--rule);
+      padding-top: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 520px) {
+      .header-top { flex-direction: column; }
+      .photo, .photo-placeholder { width: 100px; height: 130px; }
+      .header-text h1 { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══ HEADER ══════════════════════════════════════════ -->
+  <header>
+    <div class="header-top">
+
+      <!-- Replace the placeholder div below with:
+           <img src="photo.jpg" alt="Your Name" class="photo" />
+           once you upload your photo to the repository.        -->
+      <div class="photo-placeholder">Your<br/>photo<br/>here</div>
+
+      <div class="header-text">
+        <h1>Your Full Name</h1>
+        <p class="role">PhD Candidate / Postdoctoral Researcher / Assistant Professor</p>
+        <p class="institution">Department of …, University of …</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html" class="active">About</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="cv.pdf">CV</a>
+    </nav>
+  </header>
+
+  <!-- ══ BIO ═════════════════════════════════════════════ -->
+  <section class="bio">
+    <p>
+      I am a <strong>PhD Candidate / Postdoctoral Researcher</strong> in [your field] at the
+      [Department], [University]. My research focuses on [brief description of your main
+      research interests — 1–2 sentences].
+    </p>
+    <p>
+      Previously, I was at [previous institution / fellowship / grant]. I am affiliated with
+      [lab, research group, or centre if applicable].
+      A full CV can be found <a href="cv.pdf">here</a>.
+    </p>
+    <p>
+      I am also [optional: editorial roles, memberships, outreach activities, etc.].
+    </p>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- ══ CONTACT ══════════════════════════════════════════ -->
+  <section class="contact">
+    <p><strong>Email</strong> &nbsp; <a href="mailto:you@university.edu">you@university.edu</a></p>
+    <p>
+      <strong>Links</strong> &nbsp;
+      <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a> ·
+      <a href="https://philpeople.org/profiles/yourprofile">PhilPeople</a> ·
+      <a href="https://bsky.app/profile/yourhandle.bsky.social">Bluesky</a> ·
+      <a href="https://twitter.com/yourhandle">Twitter / X</a>
+    </p>
+  </section>
+
+  <!-- ══ FOOTER ═════════════════════════�
