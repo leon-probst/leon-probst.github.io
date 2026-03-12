@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research — Your Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink:    #1a1a1a; --muted: #5a5a5a; --rule:  #d0cdc8;
+      --bg:     #f9f7f4; --accent:#7a3b1e; --max-w: 680px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--ink); font-family: 'EB Garamond', Georgia, serif; font-size: 19px; line-height: 1.75; }
+    .page { max-width: var(--max-w); margin: 0 auto; padding: 64px 24px 96px; }
+    header { margin-bottom: 40px; }
+    .site-name { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 1.5rem; color: var(--muted); margin-bottom: 16px; }
+    .site-name a { color: inherit; text-decoration: none; }
+    nav { display: flex; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 10px 0; }
+    nav a { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; margin-right: 28px; padding-bottom: 2px; border-bottom: 1px solid transparent; transition: border-color 0.2s, color 0.2s; }
+    nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+    hr.rule { border: none; border-top: 1px solid var(--rule); margin: 36px 0; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 1.8rem; letter-spacing: 0.02em; margin-bottom: 28px; }
+    .subsection { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 36px 0 20px; }
+    .paper { margin-bottom: 28px; padding-left: 16px; border-left: 2px solid var(--rule); }
+    .paper .title { font-style: italic; font-size: 18px; }
+    .paper .title a { color: var(--accent); text-decoration: none; }
+    .paper .title a:hover { text-decoration: underline; }
+    .paper .meta { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--muted); margin-top: 4px; }
+    .paper .abstract { font-size: 16px; color: var(--muted); margin-top: 8px; line-height: 1.65; }
+    footer { margin-top: 64px; border-top: 1px solid var(--rule); padding-top: 20px; font-family: 'Inter', sans-serif; font-size: 12px; color: #aaa; letter-spacing: 0.05em; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <p class="site-name"><a href="index.html">Your Full Name</a></p>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="cv.pdf">CV</a>
+    </nav>
+  </header>
+
+  <h2 class="section-title">Research</h2>
+
+  <!-- ══ PUBLICATIONS ══════════════════════════════════════ -->
+  <p class="subsection">Publications</p>
+
+  <div class="paper">
+    <p class="title">
+      <a href="https://doi.org/XXXX">Paper Title Goes Here</a>
+    </p>
+    <p class="meta">
+      <em>Journal / Conference Name</em>, Vol. X, pp. X–X, 2024
+    </p>
+    <p class="abstract">
+      Optional: A one-sentence abstract or summary of the paper's contribution.
+    </p>
+  </div>
+
+  <div class="paper">
+    <p class="title">
+      <a href="#">Another Paper Title</a>
+    </p>
+    <p class="meta">
+      <em>Journal Name</em>, 2023 · <a href="#">PDF</a>
+    </p>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ══ WORKING PAPERS ════════════════════════════════════ -->
+  <p class="subsection">Working Papers &amp; Preprints</p>
+
+  <div class="paper">
+    <p class="title">
+      <a href="#">Working Paper Title</a>
+    </p>
+    <p class="meta">Under review · <a href="#">Preprint</a></p>
+    <p class="abstract">
+      Short description of the paper's argument or contribution.
+    </p>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ══ IN PROGRESS ═══════════════════════════════════════ -->
+  <p class="subsection">Work in Progress</p>
+
+  <div class="paper">
+    <p class="title">Tentative Title of Ongoing Project</p>
+    <p class="meta">In preparation</p>
+  </div>
+
+  <footer>Last updated: June 2025</footer>
+</div>
+</body>
+</html>
