@@ -21,234 +21,213 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23f9f7f4'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='36' font-weight='400' fill='%231a1a1a' letter-spacing='1'%3ELP%3C/text%3E%3C/svg%3E"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --ink:      #1a1a1a;
-      --muted:    #5a5a5a;
-      --rule:     #d0cdc8;
-      --bg:       #f9f7f4;
-      --accent:   #7a3b1e;
-      --max-w:    680px;
-    }
-
+    /*
+      Colour palette — designed for cream (#f9f7f4):
+      --navy:   #354a5e  deep warm slate — headings, name
+      --link:   #4a7a8a  muted teal-blue — links (warm enough for cream)
+      --link-h: #2d5a68  darker on hover
+      --ink:    #333333  body text
+      --muted:  #777     secondary text, nav
+      --rule:   #dedad4  soft divider lines
+      --accent: #4a7a8a  top bar, active nav (same as link)
+    */
+ 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: 'EB Garamond', Georgia, serif;
-      font-size: 19px;
-      line-height: 1.75;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f9f7f4;
+      color: #333;
+      line-height: 1.6;
       min-height: 100vh;
+      border-top: 3px solid #4a7a8a;
     }
-
-    /* ── Layout ───────────────────────────────────── */
+ 
+    /* ── Fade in ──────────────────────────────────── */
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(5px); }
+      to   { opacity: 1; transform: none; }
+    }
+ 
     .page {
-      max-width: var(--max-w);
+      max-width: 700px;
       margin: 0 auto;
-      padding: 64px 24px 96px;
+      padding: 52px 28px 96px;
+      animation: fadein 0.4s ease;
     }
-
-    /* ── Header ───────────────────────────────────── */
-    header {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-
-    .header-top {
-      display: flex;
-      align-items: flex-start;
-      gap: 32px;
-    }
-
-    .photo {
-      width: 130px;
-      height: 160px;
-      object-fit: cover;
-      object-position: top;
-      flex-shrink: 0;
-      filter: grayscale(15%);
-    }
-
-    /* placeholder shown when no photo is set */
-    .photo-placeholder {
-      width: 130px;
-      height: 160px;
-      flex-shrink: 0;
-      background: #e4e1db;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      text-align: center;
-      letter-spacing: 0.05em;
-      padding: 12px;
-    }
-
-    .header-text h1 {
-      font-family: 'Playfair Display', Georgia, serif; 
-      font-weight: 400;
-      font-size: 2.4rem;
+ 
+    /* ── Name ─────────────────────────────────────── */
+    h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      color: #354a5e;
+      margin-bottom: 22px;
       letter-spacing: 0.01em;
-      line-height: 1.1;
-      margin-bottom: 6px;
     }
-
-    .header-text .role {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .header-text .institution {
-      font-size: 16px;
-      color: var(--muted);
-      font-style: italic;
-    }
-
+ 
     /* ── Navigation ───────────────────────────────── */
     nav {
       display: flex;
-      gap: 0;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      padding: 10px 0;
+      gap: 22px;
+      margin-bottom: 40px;
     }
-
+ 
     nav a {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink);
+      font-size: 0.95rem;
+      color: #777;
       text-decoration: none;
-      margin-right: 28px;
-      padding-bottom: 2px;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s, color 0.2s;
+      transition: color 0.2s;
     }
-
-    nav a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
+ 
+    nav a:hover  { color: #333; }
+    nav a.active { color: #4a7a8a; font-weight: bold; }
+ 
+    /* ── Photo floats right ───────────────────────── */
+    .profile-photo {
+      float: right;
+      width: 165px;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+      margin: 4px 0 24px 32px;
     }
-
-    nav a.active {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
+ 
+    .photo-placeholder {
+      float: right;
+      width: 165px;
+      height: 200px;
+      margin: 4px 0 24px 32px;
+      background: #eae7e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 12px;
+      text-align: center;
     }
-
-    /* ── Section divider ──────────────────────────── */
-    hr.rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 36px 0;
-    }
-
+ 
     /* ── Bio ──────────────────────────────────────── */
+    .bio { margin-bottom: 40px; }
+ 
+    .bio::after { content: ''; display: table; clear: both; }
+ 
     .bio p {
-      margin-bottom: 18px;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
     }
-
+ 
     .bio a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: #c8a088;
+      color: #4a7a8a;
+      text-decoration: none;
+      font-weight: bold;
     }
-
     .bio a:hover {
-      color: #5c2a12;
+      color: #2d5a68;
+      text-decoration: underline;
     }
-
+ 
+    /* ── Divider ──────────────────────────────────── */
+    hr {
+      border: none;
+      border-top: 1px solid #dedad4;
+      margin: 32px 0;
+    }
+ 
     /* ── Contact ──────────────────────────────────── */
     .contact {
-      font-size: 16px;
-      color: var(--muted);
+      font-size: 0.98rem;
+      color: #666;
       line-height: 1.9;
     }
-
+ 
     .contact strong {
-      font-weight: 500;
-      color: var(--ink);
-      font-style: normal;
+      color: #354a5e;
+      font-weight: normal;
     }
-
+ 
     .contact a {
-      color: var(--accent);
+      color: #4a7a8a;
       text-decoration: none;
     }
-
     .contact a:hover {
+      color: #2d5a68;
       text-decoration: underline;
     }
-
-    /* ── Research page ────────────────────────────── */
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 1.8rem;
-      letter-spacing: 0.02em;
-      margin-bottom: 28px;
-      color: var(--ink);
-    }
-
-    .paper {
-      margin-bottom: 28px;
-      padding-left: 16px;
-      border-left: 2px solid var(--rule);
-    }
-
-    .paper .title {
-      font-style: italic;
-      font-size: 18px;
-    }
-
-    .paper .title a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .paper .title a:hover { text-decoration: underline; }
-
-    .paper .meta {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .paper .abstract {
-      font-size: 16px;
-      color: var(--muted);
-      margin-top: 8px;
-      line-height: 1.65;
-    }
-
+ 
     /* ── Footer ───────────────────────────────────── */
     footer {
-      margin-top: 64px;
-      border-top: 1px solid var(--rule);
-      padding-top: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      color: #aaa;
-      letter-spacing: 0.05em;
+      margin-top: 56px;
+      padding-top: 18px;
+      border-top: 1px solid #dedad4;
+      font-size: 0.8rem;
+      color: #bbb;
     }
-
-    /* ── Responsive ───────────────────────────────── */
-    @media (max-width: 520px) {
-      .header-top { flex-direction: column; }
-      .photo, .photo-placeholder { width: 100px; height: 130px; }
-      .header-text h1 { font-size: 1.9rem; }
+ 
+    /* ── Responsive ───────────────────────────────────────────
+       Breakpoints:
+         480px  — small phones (iPhone SE etc.)
+         600px  — large phones / small tablets
+         768px  — tablets
+       ─────────────────────────────────────────────────────── */
+ 
+    /* Tablet — slightly reduce padding */
+    @media (max-width: 768px) {
+      .page {
+        padding: 40px 24px 72px;
+      }
+    }
+ 
+    /* Large phone — unstack photo, tighten everything */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+ 
+      nav {
+        gap: 16px;
+        flex-wrap: wrap;   /* nav links wrap to second line if needed */
+      }
+ 
+      nav a {
+        font-size: 0.9rem;
+      }
+ 
+      /* Photo stops floating — sits above the bio instead */
+      .profile-photo,
+      .photo-placeholder {
+        float: none;
+        display: block;
+        width: 140px;
+        height: auto;
+        margin: 0 0 20px 0;
+      }
+ 
+      .photo-placeholder {
+        height: 170px;
+      }
+ 
+      .bio p {
+        font-size: 1rem;
+      }
+    }
+ 
+    /* Small phone — even more compact */
+    @media (max-width: 480px) {
+      .page {
+        padding: 28px 18px 60px;
+      }
+ 
+      h1 {
+        font-size: 1.5rem;
+      }
+ 
+      nav {
+        gap: 12px;
+      }
+ 
+      .contact {
+        font-size: 0.92rem;
+      }
     }
   </style>
 </head>
@@ -278,10 +257,10 @@
   <!-- ══ BIO ═════════════════════════════════════════════ -->
   <section class="bio">
     <p>
-      I'm a PhD student at the <a href="https://www.ftl.usi.ch/en/node/13517">Institute of Philosophy (ISFI)</a> of the <a href="https://www.usi.ch/en">University of Italian Switzerland (USI)</a> in Lugano. My research is in logic and philosophy of mathematics. I am particularly interested in metamathematics and the arithmetization of syntax with notions such as numbering, provability or consistency.
+      I'm a PhD student at the <a href="https://www.ftl.usi.ch/en/node/13517">Institute of Philosophy (ISFI)</a> of the <a href="https://www.usi.ch/en">University of Italian Switzerland (USI)</a> in Lugano. My research is in logic and philosophy of mathematics. I’m particularly interested in metamathematics and the arithmetization of syntax with notions such as numbering, provability, and consistency.
     </p>
     <p>
-      My PhD project is supervised by Prof. A. Giordani and co-supervised by Prof. V. Halbach. It is funded by my SNF Doc.CH Grant 227030 entitled <em>Intensionality in Metamathematics and Gödel's Second Incompleteness Theorem</em> (see <a href="https://data.snf.ch/grants/grant/227030">here</a> for details).
+      My PhD is supervised by Prof. Alessandro Giordani and co-supervised Prof. Volker Halbach. It is funded by my SNF Doc.CH Grant 227030 entitled <em>Intensionality in Metamathematics and Gödel's Second Incompleteness Theorem</em> (see <a href="https://data.snf.ch/grants/grant/227030">here</a> for details).
     </p>
     <p>
       I obtained my master's degree from the University of the Italian Switzerland (USI) in 2022 and my bachelor's degree from the University of Geneva (UNIGE) in 2020.
@@ -300,7 +279,7 @@
       <strong>Links</strong> &nbsp;
       <a href="https://orcid.org/0009-0003-2729-4547">ORCID</a> ·
       <a href="https://philpeople.org/profiles/leon-probst">PhilPeople</a> ·
-      <a href="https://bsky.app/profile/leonprobst.bsky.social">Bluesky</a> ·
+      <a href="https://bsky.app/profile/leonprobst.bsky.social">Bluesky</a>
     </p>
   </section>
 
