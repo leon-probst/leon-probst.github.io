@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name — Academic Page</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23f9f7f4'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Helvetica%2C sans-serif' font-size='32' font-weight='400' fill='%23354a5e' letter-spacing='1'%3ELP%3C/text%3E%3C/svg%3E"/>
+
+  <!-- SEO -->
+  <meta name="description"  content="[Your Name] is a [Job Title] at [University]. Research in logic, philosophy of mathematics, metamathematics, and arithmetization."/>
+  <meta name="keywords"     content="[Your Name], [University], logic, philosophy of mathematics, metamathematics, arithmetization"/>
+  <meta name="author"       content="[Your Full Name]"/>
+  <meta name="robots"       content="index, follow"/>
+  <link rel="canonical"     href="https://[yourusername].github.io/"/>
+  <meta property="og:type"        content="profile"/>
+  <meta property="og:title"       content="[Your Name] — [Job Title]"/>
+  <meta property="og:description" content="My research is in logic and the philosophy of mathematics."/>
+  <meta property="og:url"         content="https://[yourusername].github.io/"/>
+  <meta property="og:image"       content="https://[yourusername].github.io/photo.jpg"/>
+  <meta name="twitter:card"        content="summary"/>
+  <meta name="twitter:title"       content="[Your Name] — [Job Title]"/>
+  <meta name="twitter:description" content="My research is in logic and the philosophy of mathematics."/>
+  <meta name="twitter:image"       content="https://[yourusername].github.io/photo.jpg"/>
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* ── Page-specific: index ──────────────────────── */
+
+    .profile-photo {
+      float: right;
+      width: 165px;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+      margin: 4px 0 24px 32px;
+      border-radius: 4px;
+      border: 2px solid #dedad4;
+    }
+
+    .photo-placeholder {
+      float: right;
+      width: 165px;
+      height: 200px;
+      margin: 4px 0 24px 32px;
+      background: #eae7e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 12px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .bio { margin-bottom: 40px; }
+    .bio::after { content: ''; display: table; clear: both; }
+    .bio p { font-size: 1.05rem; margin-bottom: 16px; }
+    .bio a { color: #4a7a8a; text-decoration: none; font-weight: bold; }
+    .bio a:hover { color: #2d5a68; text-decoration: underline; }
+
+    .contact { font-size: 0.98rem; color: #666; line-height: 1.9; }
+    .contact strong { color: #354a5e; font-weight: normal; }
+    .contact a { color: #4a7a8a; text-decoration: none; }
+    .contact a:hover { color: #2d5a68; text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .profile-photo, .photo-placeholder {
+        float: none;
+        display: block;
+        width: 140px;
+        height: auto;
+        margin: 0 0 20px 0;
+      }
+      .photo-placeholder { height: 170px; }
+      .bio p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>Your Full Name</h1>
+
+  <nav>
+    <a href="index.html" class="active">About</a>
+    <a href="research.html">Research</a>
+    <a href="talks.html">Talks</a>
+    <a href="teaching.html">Teaching</a>
+  </nav>
+
+  <section class="bio">
+    <!-- Replace with <img src="photo.jpg" alt="Your Name" class="profile-photo"/> once uploaded -->
+    <div class="photo-placeholder">Your photo here</div>
+
+    <p>
+      I am a <strong>PhD Candidate / Postdoctoral Researcher</strong> in [your field] at the
+      <a href="https://www.university.edu" target="_blank">[Department], [University]</a>.
+      My research is in logic and the philosophy of mathematics. I am particularly interested
+      in metamathematics and the arithmetization of formal theories.
+    </p>
+    <p>
+      Previously, I was at [previous institution / fellowship / grant]. I am affiliated with
+      [lab, research group, or centre if applicable].
+      My CV is available <a href="cv.pdf">here</a>.
+    </p>
+    <p>
+      I am also [optional: editorial roles, memberships, outreach activities, etc.].
+    </p>
+  </section>
+
+  <hr/>
+
+  <div class="contact">
+    <p><strong>Email</strong> &nbsp; <a href="mailto:you@university.edu">you@university.edu</a></p>
+    <p>
+      <strong>Links</strong> &nbsp;
+      <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a> ·
+      <a href="https://philpeople.org/profiles/yourprofile">PhilPeople</a> ·
+      <a href="https://bsky.app/profile/yourhandle.bsky.social">Bluesky</a> ·
+      <a href="https://twitter.com/yourhandle">Twitter / X</a>
+    </p>
+  </div>
+
+  <footer>Last updated: June 2025</footer>
+
+</div>
+</body>
+</html>

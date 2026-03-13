@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research — Your Name</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23f9f7f4'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Helvetica%2C sans-serif' font-size='32' font-weight='400' fill='%23354a5e' letter-spacing='1'%3ELP%3C/text%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* ── Page-specific: research ───────────────────── */
+
+    .pub { margin-bottom: 20px; font-size: 1.05rem; line-height: 1.65; }
+    .pub .pub-title { font-style: italic; }
+    .pub .pub-meta { font-size: 0.9rem; color: #777; margin-top: 3px; }
+    .pub a { color: #4a7a8a; text-decoration: none; }
+    .pub a:hover { color: #2d5a68; text-decoration: underline; }
+
+    details { margin-top: 6px; }
+    details summary {
+      font-size: 0.88rem;
+      color: #4a7a8a;
+      cursor: pointer;
+      list-style: none;
+      display: inline;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before { content: '▸ '; font-size: 0.75rem; }
+    details[open] summary::before { content: '▾ '; }
+    details p { margin-top: 8px; font-size: 0.95rem; color: #555; line-height: 1.65; }
+
+    @media (max-width: 600px) { .pub { font-size: 1rem; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>Your Full Name</h1>
+
+  <nav>
+    <a href="index.html">About</a>
+    <a href="research.html" class="active">Research</a>
+    <a href="talks.html">Talks</a>
+    <a href="teaching.html">Teaching</a>
+  </nav>
+
+  <h2>Publications</h2>
+
+  <div class="pub">
+    <div class="pub-title">"Paper Title"</div>
+    <div class="pub-meta">
+      <em>Journal Name</em>, Vol. X(X), pp. X–X, 2024 &nbsp;·&nbsp;
+      <a href="#">Link</a> &nbsp;·&nbsp; <a href="#">PDF</a>
+    </div>
+    <details>
+      <summary>Abstract</summary>
+      <p>Your abstract goes here.</p>
+    </details>
+  </div>
+
+  <div class="pub">
+    <div class="pub-title">"Paper Title"</div>
+    <div class="pub-meta">
+      <em>Journal Name</em>, Vol. X(X), pp. X–X, 2023 &nbsp;·&nbsp;
+      <a href="#">Link</a>
+    </div>
+    <details>
+      <summary>Abstract</summary>
+      <p>Your abstract goes here.</p>
+    </details>
+  </div>
+
+  <h2>Under Review</h2>
+
+  <div class="pub">
+    <div class="pub-title">"Paper Title"</div>
+    <div class="pub-meta">Under review &nbsp;·&nbsp; <a href="#">Preprint</a></div>
+    <details>
+      <summary>Abstract</summary>
+      <p>Your abstract goes here.</p>
+    </details>
+  </div>
+
+  <h2>Work in Progress</h2>
+
+  <div class="pub">
+    <div class="pub-title">"Tentative Title"</div>
+    <div class="pub-meta">In preparation</div>
+  </div>
+
+  <footer>Last updated: June 2025</footer>
+
+</div>
+</body>
+</html>
