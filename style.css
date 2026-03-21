@@ -18,6 +18,131 @@
 
 /* ── Base ──────────────────────────────────────────── */
 body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  background-color: #f9f7f4;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  border-top: 3px solid #4a7a8a;
+}
+
+/* ── Fade-in ───────────────────────────────────────── */
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 52px 28px 96px;
+  animation: fadein 0.4s ease;
+}
+
+/* ── Name / page title ─────────────────────────────── */
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #354a5e;
+  margin-bottom: 22px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Navigation ────────────────────────────────────── */
+nav {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+nav a {
+  font-size: 0.95rem;
+  color: #777;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: #333; }
+
+nav a.active {
+  color: #4a7a8a;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ── Section headings ──────────────────────────────── */
+h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: #354a5e;
+  margin: 40px 0 16px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #dedad4;
+}
+
+
+
+
+/* ── Horizontal rule ───────────────────────────────── */
+hr {
+  border: none;
+  border-top: 1px solid #dedad4;
+  margin: 32px 0;
+}
+
+/* ── Footer ────────────────────────────────────────── */
+footer {
+  margin-top: 56px;
+  padding-top: 18px;
+  border-top: 1px solid #dedad4;
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+/* ══════════════════════════════════════════════════════
+   Responsive breakpoints
+   480px  small phones (iPhone SE etc.)
+   600px  large phones / small tablets
+   768px  tablets
+   ══════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .page { padding: 40px 24px 72px; }
+}
+
+@media (max-width: 600px) {
+  h1  { font-size: 1.7rem; }
+  nav { gap: 16px; flex-wrap: wrap; }
+  nav a { font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .page { padding: 28px 18px 60px; }
+  h1    { font-size: 1.5rem; }
+  nav   { gap: 12px; }
+}
+/*
+  ══════════════════════════════════════════════════════
+  style.css — shared styles for all pages
+  ══════════════════════════════════════════════════════
+
+  Colour palette (cream background):
+    #354a5e  deep warm slate  — name, headings
+    #4a7a8a  muted teal-blue  — links, accent bar, active nav
+    #2d5a68  darker teal      — link hover
+    #333     body text
+    #777     muted / nav
+    #dedad4  divider lines
+    #f9f7f4  cream background
+*/
+
+/* ── Reset ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Base ──────────────────────────────────────────── */
+body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #f9f7f4;
   color: #333;
