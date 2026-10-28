@@ -1,116 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research — Léon Probst</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23f9f7f4'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Helvetica%2C sans-serif' font-size='32' font-weight='400' fill='%23354a5e' letter-spacing='1'%3ELP%3C/text%3E%3C/svg%3E"/>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23f9f7f4'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Helvetica%2C sans-serif' font-size='32' font-weight='400' fill='%23354a5e' letter-spacing='1'%3ELP%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ── Page-specific: research ───────────────────── */
+    /* Page-specific: research */
 
-    .pub { margin-bottom: 20px; font-size: 1.05rem; line-height: 1.65; }
-    .pub .pub-title { font-style: italic; }
-    .pub .pub-meta { font-size: 0.9rem; color: #777; margin-top: 3px; }
+    .prose {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .pub {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+    .pub-title { font-style: italic; }
+    .pub-meta {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 3px;
+    }
     .pub a { color: #4a7a8a; text-decoration: none; }
     .pub a:hover { color: #2d5a68; text-decoration: underline; }
 
-    details { margin-top: 6px; }
-    details summary {
+    .pub details { margin-top: 6px; }
+    .pub summary {
+      display: inline;
+      list-style: none;
       font-size: 0.88rem;
       color: #4a7a8a;
       cursor: pointer;
-      list-style: none;
-      display: inline;
     }
-    details summary::-webkit-details-marker { display: none; }
-    details summary::before { content: '▸ '; font-size: 0.75rem; }
-    details[open] summary::before { content: '▾ '; }
-    details p { margin-top: 8px; font-size: 0.95rem; color: #555; line-height: 1.65; }
+    .pub summary::-webkit-details-marker { display: none; }
+    .pub summary::before { content: "▸ "; font-size: 0.75rem; }
+    .pub details[open] summary::before { content: "▾ "; }
+    .pub details p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.65;
+    }
 
-    @media (max-width: 600px) { .pub { font-size: 1rem; } }
+    @media (max-width: 600px) {
+      .pub { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
 <div class="page">
 
-  <h1>Léon Probst</h1>
+  <header>
+    <h1>Léon Probst</h1>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="research.html" class="active" aria-current="page">Research</a>
+      <a href="talks.html">Talks</a>
+      <a href="teaching.html">Teaching</a>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="index.html">About</a>
-    <a href="research.html" class="active">Research</a>
-    <a href="talks.html">Talks</a>
-    <a href="teaching.html">Teaching</a>
-  </nav>
+  <main>
 
-<!-- ══ RESEARCH OVERVIEW ════════════════════════════════ -->
+    <!-- Publications -->
+    <section>
+      <h2>Publications</h2>
 
+      <article class="pub">
+        <div class="pub-title">“On the choice of Gödel numberings”</div>
+        <div class="pub-meta">
+          <em>Review of Symbolic Logic</em>, 2026 &nbsp;·&nbsp;
+          <a href="https://www.cambridge.org/core/journals/review-of-symbolic-logic/article/abs/on-the-choice-of-godel-numberings/7585DA7A0CF24EF568D33EF04E3993AB">Link</a> &nbsp;·&nbsp;
+          <a href="https://leon-probst.github.io/pdf/Probst_Preprint_Choice_Numbering.pdf">Preprint</a>
+        </div>
+        <details>
+          <summary>Abstract</summary>
+          <p>The choice of Gödel numberings is one of the sources of indeterminacy in metamathematics; for certain numberings, our well-known theorems, such as Gödel’s second incompleteness theorem, do not hold. However, it is widely believed that all our metamathematical theorems hold for all <em>reasonable</em> Gödel numberings. This article investigates this notion of reasonable Gödel numberings and provides a general framework for answering philosophical questions about Gödel numberings and the arithmetisation of syntax.</p>
+        </details>
+      </article>
+    </section>
 
-<!-- <h2>Research Overview</h2>
+    <!-- Under review -->
+    <section>
+      <h2>Under Review</h2>
 
-<p style="font-size:1.05rem; color:#444; line-height:1.7; margin-bottom:24px;">
-</p>
--->
+      <article class="pub">
+        <div class="pub-title">“Uniform numberings and self-reference”</div>
+        <div class="pub-meta">With Balthasar Grabmayr</div>
+        <details>
+          <summary>Abstract</summary>
+          <p>Metamathematical results are formulated and proved relative to various formalisation choices, including the choice of Gödel numbering. Recent work shows that classical metamathematical results, such as Gödel’s, Tarski’s, and Church’s theorems, hold for all reasonable choices of numbering. In contrast, the consistency of certain type-free truth theories strongly depends on the underlying numbering. This calls into question whether these axiomatic theories can be taken to faithfully reflect informal reasoning about truth. In this paper, we introduce a new constraint on numberings, which we call <em>uniformity</em>. The guiding idea is that a reasonable numbering should encode the inductive structure of its domain uniformly, without exploiting case distinctions that introduce illicit information. We show that almost all canonical numberings in the literature are uniform. Moreover, we show that the consistency of these truth theories is invariant across all uniform numberings. Uniformity thus provides a principled way of distinguishing genuine metamathematical phenomena from artefacts of coding.</p>
+        </details>
+      </article>
 
-<h2>PhD Project</h2>
+      <article class="pub">
+        <div class="pub-title">“Interpreting Gödel’s second incompleteness theorem”</div>
+        <details>
+          <summary>Abstract</summary>
+          <p>There is a well-known gap between the metamathematical theorems we prove and call Gödel’s second incompleteness theorem and its standard interpretation, which says, roughly, that no consistent and sufficiently strong theory proves its own consistency.</p>
+          <p>This article argues that the standard approach to this problem, which takes the derivability conditions to be necessary conditions on reasonable representations of provability, fails in its present state. It then sketches an alternative approach based on the resemblance criterion both for justifying the standard interpretation and, more generally, for dealing with reasonable choices in metamathematics.</p>
+        </details>
+      </article>
+    </section>
 
-<p style="font-size:1.05rem; color:#444; line-height:1.7; margin-bottom:8px;">
-  <em></em>
-</p>
+    <!-- Work in progress -->
+    <section>
+      <h2>Work in Progress</h2>
+      <p>Tentative titles and summaries.</p>
 
-<p style="font-size:1.05rem; color:#444; line-height:1.7; margin-bottom:24px;"> 
-My PhD project investigates the phenomenon of intensionality in metamathematics and, more specifically, in Gödel's second incompleteness theorem.
-It aims first to critically evaluate the different sources of intentionality due to the arithmetization of the syntax, and to defend a criterion of admissibility of numbering as well as general conditions under which an arithmetical formula can express a syntactic property.
-Second, it explores the philosophical interpretations of Gödel's second incompleteness theorem and how one should justify it. </p>
+      <article class="pub">
+        <div class="pub-title">“A typed theory of arbitrary objects”</div>
+        <div class="pub-meta">With Vita Saitta</div>
+        <details>
+          <summary>Summary</summary>
+          <p>We discuss some problems of the principle of generic attribution and propose a typed theory of arbitrary objects that avoids them.</p>
+        </details>
+      </article>
+    </section>
 
-<h2>Other Research Interests</h2>
+    <!-- PhD project -->
+    <section>
+      <h2>PhD Project</h2>
+      <p class="prose">My PhD project investigates the phenomenon of intensionality in metamathematics and, more specifically, in Gödel’s second incompleteness theorem. It aims first to critically evaluate the different sources of intensionality due to the arithmetisation of syntax, and to defend a criterion of admissibility of numberings as well as general conditions under which an arithmetical formula can express a syntactic property. Second, it explores the philosophical interpretations of Gödel’s second incompleteness theorem and how one should justify it.</p>
+    </section>
 
-<p style="font-size:1.05rem; color:#444; line-height:1.7; margin-bottom:24px;"> 
-I am also working on more general issues in philosophy of mathematics and computation such as finitism, Isaacson's thesis, deviant notation and arbitrary objects. 
+    <!-- Other interests -->
+    <section>
+      <h2>Other Research Interests</h2>
+      <p class="prose">I am also working on more general issues in philosophy of mathematics and computation, such as finitism, Isaacson’s thesis, deviant notation and arbitrary objects. In my master’s thesis, I defended a new interpretation of the principle of generic attribution for arbitrary objects and sketched some potential applications in the philosophy of mathematics.</p>
+    </section>
 
-In my master's thesis, I defended a new interpretation of the principle of generic attribution for arbitrary objects and sketched some potential applications in the philosophy of mathematics. </p>
-
-  <h2>Publications</h2>
-
-  <div class="pub">
-    <div class="pub-title">"On the choice of Gödel numberings"</div>
-    <div class="pub-meta">
-      <em>Review of Symbolic Logic</em>, 2026 &nbsp;·&nbsp;
-      <a href="https://www.cambridge.org/core/journals/review-of-symbolic-logic/article/abs/on-the-choice-of-godel-numberings/7585DA7A0CF24EF568D33EF04E3993AB">Link</a> &nbsp;·&nbsp; <a href="https://leon-probst.github.io/pdf/Probst_Preprint_Choice_Numbering.pdf">Preprint</a>
-    </div>
-    <details>
-      <summary>Abstract</summary>
-      <p> The choice of Gödel numberings is one of the sources of indeterminacy in metamathematics; for certain numberings, our well-known theorems, such as Gödel's second incompleteness theorem, do not hold. However, it is widely believed that all our metamathematical theorems hold for all <em>reasonable</em> Gödel numberings. This article investigates this notion of reasonable Gödel numberings and provides a general framework for answering philosophical questions about Gödel numberings and the arithmetisation of syntax. 
-</p>
-    </details>
-  </div>
-
-  <h2>Under Review</h2>
-  
-    <div class="pub">
-    <div class="pub-title">"Uniform numberings and sefl-reference", B. Grabmayr (co-author)</div>
-    <details>
-      <summary>Abstract</summary>
-    <p>Metamathematical results are formulated and proved relative to various formalisation choices, including the choice of Gödel numbering. Recent work shows that classical metamathematical results, such as Gödel's, Tarski's, and Church's theorems, hold for all reasonable choices of numbering. In contrast, the consistency of certain type-free truth theories strongly depends on the underlying numbering. This calls into question whether these axiomatic theories can be taken to faithfully reflect informal reasoning about truth. In this paper, we introduce a new constraint on numberings, which we call <em>uniformity</em>. The guiding idea is that a reasonable numbering should encode the inductive structure of its domain uniformly, without exploiting case distinctions that introduce illicit information. We show that almost all canonical numberings in the literature are uniform. Moreover, we show that the consistency of these truth theories is invariant across all uniform numberings. Uniformity thus provides a principled way of distinguishing genuine metamathematical phenomena from artefacts of coding.
-</p>
-    </details>
-  </div>
-
-
-  <h2>Work in progress</h2>
-
-  <p>Tentative titles and summaries.</p>
-
-  <div class="pub">
-    <div class="pub-title">"Interpreting the second incompleteness theorems" </div>
-    <details>
-      <summary>Summary</summary>
-      <p> I discuss Detlefsen's stability problem and, more generally, how to argue in favour of the standard philosophical interpretation of Gödel's second incompleteness theorem.
-</p>
-    </details>
-  </div>
+  </main>
 
 </div>
 </body>
